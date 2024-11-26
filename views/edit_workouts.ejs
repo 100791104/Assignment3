@@ -1,0 +1,42 @@
+<%- include('layout/header') %>
+
+<div class = "container">
+    <div class = "row">
+        <div class="col-lg-6 mx-auto mt-4">
+            <div class="card shadow">
+                <div class="card-header bg-success">
+                    <h3 class="text-light">Edit Workout (<%= wtrack.exercise %>)</h3>
+                </div>
+                <div class="card-body p-4">
+                    <form action="/update/<%= wtrack._id %>" method="POST">
+                        <div class="mb-3">
+                            <label for="exercise">Exercise:</label>
+                            <input type="text" name="exercise" value="<%= wtrack.exercise %>" id="exercise" class="form-control form-control-lg" placeholder="name of the exercise" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="sets">Sets:</label>
+                            <input type="number" name="sets" value="<%= wtrack.sets %>" id="sets" class="form-control form-control-lg" placeholder="the num. of sets completed" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="weight">Weight (lbs):</label>
+                            <input type="number" name="weight" value="<%= wtrack.weight %>" id="weight" class="form-control form-control-lg" placeholder="the weight of equipment (lbs)" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="reps">Reps:</label>
+                            <input type="number" name="reps" value="<%= wtrack.reps %>" id="reps" class="form-control form-control-lg" placeholder="the num. of reps completed" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="notes">Notes:</label>
+                            <input type="text" name="notes" value="<%= wtrack.notes %>" id="notes" class="form-control form-control-lg" placeholder="Enter other relevant info">
+                        </div>
+                        <div class="mb-3">
+                            <input type="submit" name="submit" value="Update Workout" class="btn btn-success btn-lg">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include('layout/footer') %>
